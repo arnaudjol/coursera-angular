@@ -13,10 +13,12 @@
     ctrl.listEmpty = false;
     ctrl.getMenuItems = function(){
       ctrl.listEmpty = ctrl.searchTerm === '';
-      MenuSearchService.getMatchedMenuItems(ctrl.searchTerm).then(function(data){
-        ctrl.found = data;
-        ctrl.listEmpty = data === undefined || data.length === 0;
-      });
+      if (ctrl.searchTerm !== '') {
+        MenuSearchService.getMatchedMenuItems(ctrl.searchTerm).then(function(data){
+          ctrl.found = data;
+          ctrl.listEmpty = data === undefined || data.length === 0;
+        });
+      }
     }
 
     ctrl.removeMenuItem = function(index){

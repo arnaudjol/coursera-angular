@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Click on a category to see items details <a ui-sref="home" class="btn btn-primary">Back to home</a>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-5">
+      <div class="panel panel-info">
+        <div class="panel-heading">Categories</div>
+        <div class="panel-body">
+          <categories cat-items="catCtrl.catItems"></categories>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <ui-view></ui-view>
+    </div>
+  </div>
+</div>
